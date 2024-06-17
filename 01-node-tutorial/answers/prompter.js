@@ -21,17 +21,25 @@ const getBody = (req, callback) => {
 };
 
 // here, you could declare one or more variables to store what comes back from the form.
-let item = "Enter something below.";
+let item = "Choose a color: blue, green, red, yellow, violet";
+
 
 // here, you can change the form below to modify the input fields and what is displayed.
 // This is just ordinary html with string interpolation.
 const form = () => {
   return `
   <body>
-  <p>${item}</p>
+  <p style=color:${item};
+    font-size: 20px;
+    font-weight:bold;
+  >${item}</p>
   <form method="POST">
-  <input name="item"></input>
-  <button type="submit">Submit</button>
+  <input name="item"
+    style=color:black;
+    font-size:15px;
+  ></input>
+  <button type="submit"
+    style=color:${item}>Submit</button>
   </form>
   </body>
   `;
