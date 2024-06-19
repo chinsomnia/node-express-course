@@ -6,8 +6,9 @@ const server = http.createServer((req, res) => {
     }
     else if (req.url === '/subpage') {
         res.end('This is a subpage.');
+    } else {
+        res.end(`<h1>Sorry!</h1><p>Page doesn't exist.</p><a href="/">Go back to homepage</a>`)
     }
-    res.end(`<h1>Sorry!</h1><p>Page doesn't exist.</p><a href="/">Go back to homepage</a>`)
 });
 
 server.listen(3000);
