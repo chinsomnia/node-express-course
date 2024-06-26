@@ -2,3 +2,5 @@
 /content/big.txt
 answers/temporary/*
 !answers/temporary/.keep
+
+01-node-tutorial/.DS_Store
