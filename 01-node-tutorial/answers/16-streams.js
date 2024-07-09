@@ -6,21 +6,20 @@ const stream = createReadStream('../content/big.txt', {
     encoding: 'utf8'
 });
 
+let numberOfChunksReceived = 0;
+
 stream.on('data', (result) => {
     console.log('Result received');
-    
-    let numberOfChunksReceived = 0;
 
     for (let i = 0; i < 1000; i++) {
         console.log(`Counter: ${i}`);
         numberOfChunksReceived++;
     }
-
-    console.log(numberOfChunksReceived);
-
 });
 
+
 stream.on('end', () => {
+    console.log('total chunks received:', numberOfChunksReceived);
     console.log('end of data');
 });
 
