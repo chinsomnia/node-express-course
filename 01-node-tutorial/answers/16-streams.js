@@ -9,12 +9,7 @@ const stream = createReadStream('../content/big.txt', {
 let numberOfChunksReceived = 0;
 
 stream.on('data', (result) => {
-    console.log('Result received');
-
-    for (let i = 0; i < 1000; i++) {
-        console.log(`Counter: ${i}`);
-        numberOfChunksReceived++;
-    }
+    numberOfChunksReceived++;
 });
 
 
